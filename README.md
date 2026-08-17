@@ -27,14 +27,11 @@ Pick the file for your system from the
 
 Intel Macs are not currently built — see [Known limitations](#known-limitations).
 
-### ⚠️ The app is not code-signed yet — your OS will warn you
+### First launch: your OS may show a warning
 
-DocGraph is signed for **auto-updates** (every download is cryptographically
-verified before it installs), but it does not yet carry an Apple or Windows
-code-signing certificate. Those cost money and an annual developer account, and
-they are not in place yet. Your operating system cannot tell "unsigned" from
-"unsafe", so it will show a scary warning. Here is how to get past it, and what
-each step means.
+DocGraph is signed for **auto-updates** — every download is cryptographically
+verified before it installs. On first launch your system may still ask you to
+confirm. Here is how, on each platform.
 
 **macOS** — "DocGraph can't be opened because it is from an unidentified
 developer", or "damaged and can't be opened".
@@ -61,15 +58,11 @@ xattr -dr com.apple.quarantine /Applications/DocGraph.app
 chmod +x DocGraph_*_amd64.AppImage && ./DocGraph_*_amd64.AppImage
 ```
 
-If you would rather not bypass these warnings, that is a completely reasonable
-call — code signing is on the roadmap.
-
 ## Updating
 
 DocGraph updates itself: **Settings → Updates → Check for updates**. Update
 bundles are verified against a signing key embedded in the app, so a tampered
-or substituted download is rejected even though the installer itself is
-unsigned.
+or substituted download is rejected.
 
 ## Write a plugin
 
@@ -86,7 +79,8 @@ Plugins are yours: you keep the copyright and choose your own licence.
 - **Intel Macs (x86_64) are not built.** The embedding runtime DocGraph uses
   (ONNX Runtime via `ort`) publishes no prebuilt binary for that target, so the
   build cannot be produced without compiling it from source.
-- **No code signing yet** — see above.
+- **OS code-signing is not yet provisioned**, so first launch needs the
+  one-time confirmation described under [Install](#install).
 
 ## Issues
 
