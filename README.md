@@ -60,9 +60,29 @@ chmod +x DocGraph_*_amd64.AppImage && ./DocGraph_*_amd64.AppImage
 
 ## Updating
 
-DocGraph updates itself: **Settings → Updates → Check for updates**. Update
-bundles are verified against a signing key embedded in the app, so a tampered
-or substituted download is rejected.
+Check whenever you like: **Settings → Updates → Check for updates**.
+
+You can also let DocGraph look on its own. **Settings → Updates → Check for
+updates automatically** is off until you switch it on, and installing an update
+never switches it on for you. With it on, DocGraph checks a few minutes after
+you open it, and about once a day if you leave it running — at most once a day
+however often you open the app.
+
+A check fetches one small file from this repository and **sends nothing about
+you**: not your version, not your platform, not any identifier. There is no
+account, no telemetry and no install id to send. Every check turns on the
+network indicator in the title bar while it happens and is recorded in your
+Activity log, marked so you can tell an automatic check from one you asked for.
+
+**Nothing installs by itself.** When a newer version exists you get a bar
+offering it, with the release notes, and the choice to update now, be reminded
+later, or skip that version — skipping one release still lets the next one
+through. Update bundles are verified against a signing key embedded in the app,
+so a tampered or substituted download is rejected.
+
+Release notes for the version you are running are in the app under **Settings →
+Updates → What's new in this version**, and the notes for every release are on
+that release's page here.
 
 ## Write a plugin
 
