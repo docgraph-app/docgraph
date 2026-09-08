@@ -81,8 +81,8 @@ through. Update bundles are verified against a signing key embedded in the app,
 so a tampered or substituted download is rejected.
 
 Release notes for the version you are running are in the app under **Settings →
-Updates → What's new in this version**, and the notes for every release are on
-that release's page here.
+Updates → What's new in this version**. Every release is listed at
+[docs.docgraph.app/changelog](https://docs.docgraph.app/changelog).
 
 ## Write a plugin
 
