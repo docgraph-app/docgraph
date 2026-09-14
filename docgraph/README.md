@@ -9,9 +9,6 @@ A Claude Code plugin that connects to DocGraph's local MCP server and adds a
 /docgraph add a payments table linked to orders on Diagrams/shop-erd.wb
 ```
 
-Plugin skills are namespaced, so `/docgraph:docgraph …` is the fully qualified
-form if the short name is ever ambiguous.
-
 Plain prose works too once the plugin is installed — "use DocGraph to draw an
 ERD of my database" — the skill just makes the intent explicit.
 
