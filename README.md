@@ -84,6 +84,26 @@ Release notes for the version you are running are in the app under **Settings �
 Updates → What's new in this version**. Every release is listed at
 [docs.docgraph.app/changelog](https://docs.docgraph.app/changelog).
 
+## Use DocGraph from Claude Code
+
+This repository is also a Claude Code plugin marketplace. The `docgraph`
+plugin connects Claude Code to DocGraph's local MCP server and adds a
+`/docgraph` skill that draws ERDs, architecture and flow diagrams on a
+whiteboard, or reads and writes your notes:
+
+```
+/docgraph create an ERD for the database in ~/work/shop
+```
+
+1. In DocGraph: **Settings → AI → MCP**, enable the server and copy the token.
+2. `export DOCGRAPH_MCP_TOKEN="<token>"` in your shell profile.
+3. In Claude Code: `/plugin marketplace add docgraph-app/docgraph`, then
+   `/plugin install docgraph@docgraph`, and restart Claude Code.
+
+Every write the agent makes is confirmed inside DocGraph first. Details in
+[docgraph/README.md](docgraph/README.md) and at
+[docs.docgraph.app/ai/mcp](https://docs.docgraph.app/ai/mcp/).
+
 ## Write a plugin
 
 The plugin API is open source (MIT) and anyone can publish to the in-app store.

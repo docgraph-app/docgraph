@@ -1,0 +1,18 @@
+{
+  "name": "docgraph",
+  "owner": { "name": "DocGraph", "email": "developer@docgraph.app" },
+  "metadata": {
+    "description": "Official DocGraph plugins for Claude Code",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "docgraph",
+      "source": "./docgraph",
+      "description": "Drive your DocGraph vault from Claude Code: /docgraph draws ERDs and diagrams on a whiteboard, or reads and writes notes, through DocGraph's local MCP server.",
+      "version": "0.1.0",
+      "category": "productivity",
+      "keywords": ["docgraph", "mcp", "erd", "diagram", "whiteboard"]
+    }
+  ]
+}

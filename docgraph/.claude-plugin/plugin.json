@@ -1,0 +1,10 @@
+{
+  "name": "docgraph",
+  "version": "0.1.0",
+  "description": "Drive your DocGraph vault from Claude Code: /docgraph draws ERDs, architecture and flow diagrams on a whiteboard, or reads and writes notes, through DocGraph's local MCP server.",
+  "author": { "name": "DocGraph", "email": "developer@docgraph.app" },
+  "homepage": "https://docs.docgraph.app/ai/mcp/",
+  "repository": "https://github.com/docgraph-app/docgraph",
+  "license": "MIT",
+  "keywords": ["docgraph", "mcp", "erd", "diagram", "whiteboard", "notes"]
+}
