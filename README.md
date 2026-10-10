@@ -7,8 +7,7 @@ point it at and never uploads it anywhere.
 **[⬇ Download the latest release](https://github.com/docgraph-app/docgraph/releases/latest)**
 
 Free to use. This repository hosts the downloads and the auto-update manifest;
-the application source is not public. The **plugin ecosystem is open source**
-(MIT) — see below.
+the application source is not public.
 
 ---
 
@@ -104,15 +103,16 @@ Every write the agent makes is confirmed inside DocGraph first. Details in
 [docgraph/README.md](docgraph/README.md) and at
 [docs.docgraph.app/ai/mcp](https://docs.docgraph.app/ai/mcp/).
 
-## Write a plugin
+## Plugins
 
-The plugin API is open source (MIT) and anyone can publish to the in-app store.
+Third-party plugins are **coming in a later release**. The graph, Vault Map and
+Problems panels are built in today.
 
-- **[plugin-api](https://github.com/docgraph-app/plugin-api)** — the typed SDK
-- **[registry](https://github.com/docgraph-app/registry)** — publish by opening a PR
-- **[word-count](https://github.com/docgraph-app/word-count)** — a complete example in ~100 lines
-
-Plugins are yours: you keep the copyright and choose your own licence.
+The plugin SDK ([plugin-api](https://github.com/docgraph-app/plugin-api)), the
+[registry](https://github.com/docgraph-app/registry) and an example plugin
+([word-count](https://github.com/docgraph-app/word-count)) are already open
+source (MIT) for anyone who wants an early look, but the current app does not
+load plugins from them yet.
 
 ## Known limitations
 
