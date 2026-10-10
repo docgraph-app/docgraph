@@ -1,0 +1,59 @@
+name: Bug report
+description: Something in DocGraph doesn't work the way it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. The quickest way to file a bug is
+        **Help → Report a Problem…** inside DocGraph (or Settings → Updates → Report a problem…),
+        which fills in your version and system for you.
+
+        Please don't paste private note content here: this repository is public.
+        For anything sensitive, email **support@docgraph.app** instead.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect to see instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a Markdown note
+        2. Press Enter at the end of a list
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: DocGraph version
+      description: Shown under Settings → Updates.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - macOS (Apple Silicon)
+        - Windows
+        - Linux
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS version
+      placeholder: "macOS 15.4, Windows 11 24H2, Ubuntu 24.04…"
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics (optional)
+      description: Filled in for you by Help → Report a Problem…. Add a screenshot or anything else that helps.
+      render: text

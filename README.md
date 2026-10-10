@@ -122,11 +122,21 @@ Plugins are yours: you keep the copyright and choose your own licence.
 - **OS code-signing is not yet provisioned**, so first launch needs the
   one-time confirmation described under [Install](#install).
 
-## Issues
+## Report a bug or request a feature
 
-Bug reports and feature requests are welcome in this repository's
-[issues](https://github.com/docgraph-app/docgraph/issues), even though the
-source lives elsewhere.
+The source lives elsewhere, but bugs and ideas are tracked here in the open.
+
+- **Bug:** in DocGraph, choose **Help → Report a Problem…** (or **Settings → Updates →
+  Report a problem…**). It opens a
+  [bug report](https://github.com/docgraph-app/docgraph/issues/new?template=bug_report.yml)
+  with your version and system already filled in. Nothing is sent until you
+  submit it yourself.
+- **Feature request:** [open one here](https://github.com/docgraph-app/docgraph/issues/new?template=feature_request.yml).
+  Check the [existing issues](https://github.com/docgraph-app/docgraph/issues)
+  first; a 👍 on one that's already there counts.
+- **Question:** ask in [Discussions](https://github.com/docgraph-app/docgraph/discussions).
+- **Private or no GitHub account:** email **support@docgraph.app**.
+- **Security problem:** see [SECURITY.md](SECURITY.md). Please don't post it publicly.
 
 ## Licence
 
