@@ -1,86 +1,65 @@
 # DocGraph
 
-A local-first knowledge base for your own HTML and Markdown files. Your notes
-stay on your disk, in formats you already own — DocGraph reads the folder you
-point it at and never uploads it anywhere.
+**DocGraph is a free, privacy-first, AI-native personal knowledge graph for Mac** —
+a notes app where your HTML and Markdown notes, the links between them and an AI
+that has read all of them live in one place. Your notes stay plain files in a
+folder you own, and the AI runs on your Mac by default: no account, no
+subscription, no telemetry.
 
-**[⬇ Download the latest release](https://github.com/docgraph-app/docgraph/releases/latest)**
+**[⬇ Download for Mac (Apple Silicon)](https://docgraph.app/download)** ·
+[Website](https://docgraph.app) · [Documentation](https://docs.docgraph.app) ·
+[FAQ](https://docgraph.app/faq)
 
-Free to use. This repository hosts the downloads and the auto-update manifest;
-the application source is not public.
+- **Ask your notes.** Chat with your whole vault, a folder, a tag or a date range;
+  answers cite the notes they came from. A built-in local model means every
+  question is free and works offline. Ollama, Apple's on-device model and cloud
+  models (OpenAI, Anthropic, OpenRouter) work too, if you choose.
+- **Plain files.** `.html` and `.md` notes in a normal folder — open an existing
+  Obsidian vault in place, wikilinks and callouts included. PDFs, Word files,
+  spreadsheets and scans are searchable alongside them.
+- **Knowledge tools.** Backlinks, graph view, tables and saved queries, tasks,
+  calendar, whiteboards and Excalidraw sketches.
+- **Private by design.** Deny-by-default network gate with a visible activity
+  log, per-file encryption, secret detection, Git version history.
+- **Works with your agents.** A built-in MCP server lets Claude Code, Codex,
+  Cursor and others use your vault (off by default; every write asks first).
+
+Free to use. This repository hosts the downloads, the auto-update manifest and
+the public issue tracker; the application source is not public.
 
 ---
 
 ## Install
 
-Pick the file for your system from the
-[latest release](https://github.com/docgraph-app/docgraph/releases/latest).
+Requires a Mac with Apple Silicon (M1 or later) and macOS 13.3 Ventura or later.
 
-| System | File |
-|---|---|
-| macOS (Apple Silicon) | `DocGraph_*_aarch64.dmg` |
-| Windows | `DocGraph_*_x64-setup.exe` (or the `.msi`) |
-| Linux (Debian/Ubuntu) | `DocGraph_*_amd64.deb` |
-| Linux (Fedora/RHEL) | `DocGraph-*.x86_64.rpm` |
-| Linux (any) | `DocGraph_*_amd64.AppImage` |
+1. Download `DocGraph-mac-apple-silicon.dmg` from
+   [docgraph.app/download](https://docgraph.app/download) or the
+   [latest release](https://github.com/docgraph-app/docgraph/releases/latest).
+2. Open it and drag DocGraph to Applications.
 
-Intel Macs are not currently built — see [Known limitations](#known-limitations).
-
-### First launch: your OS may show a warning
-
-DocGraph is signed for **auto-updates** — every download is cryptographically
-verified before it installs. On first launch your system may still ask you to
-confirm. Here is how, on each platform.
-
-**macOS** — "DocGraph can't be opened because it is from an unidentified
-developer", or "damaged and can't be opened".
-
-1. Open the `.dmg` and drag DocGraph to Applications.
-2. In Applications, **right-click** (or Control-click) DocGraph → **Open**.
-3. Click **Open** in the dialog.
-
-You only do this once. If macOS insists the app is "damaged", it has quarantined
-it; clear that flag:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/DocGraph.app
-```
-
-**Windows** — "Windows protected your PC" (SmartScreen).
-
-1. Click **More info**.
-2. Click **Run anyway**.
-
-**Linux** — no signing gate. For the AppImage, make it executable first:
-
-```bash
-chmod +x DocGraph_*_amd64.AppImage && ./DocGraph_*_amd64.AppImage
-```
+DocGraph is signed with a Developer ID and notarized by Apple, so it opens like
+any other Mac app. Intel Macs, Windows and Linux are planned for later releases.
 
 ## Updating
 
-Check whenever you like: **Settings → Updates → Check for updates**.
+Check whenever you like: **Settings → General → Updates → Check for updates**.
 
-You can also let DocGraph look on its own. **Settings → Updates → Check for
-updates automatically** is off until you switch it on, and installing an update
-never switches it on for you. With it on, DocGraph checks a few minutes after
-you open it, and about once a day if you leave it running — at most once a day
-however often you open the app.
+DocGraph also checks on its own about once a day (a few minutes after launch,
+then roughly every 24 hours). You can turn that off in **Settings → General →
+Updates**.
 
 A check fetches one small file from this repository and **sends nothing about
 you**: not your version, not your platform, not any identifier. There is no
-account, no telemetry and no install id to send. Every check turns on the
-network indicator in the title bar while it happens and is recorded in your
-Activity log, marked so you can tell an automatic check from one you asked for.
+account, no telemetry and no install id to send. Every check shows on the
+network badge in the title bar and is recorded in your Activity log.
 
 **Nothing installs by itself.** When a newer version exists you get a bar
 offering it, with the release notes, and the choice to update now, be reminded
-later, or skip that version — skipping one release still lets the next one
-through. Update bundles are verified against a signing key embedded in the app,
-so a tampered or substituted download is rejected.
+later, or skip that version. Update bundles are verified against a signing key
+embedded in the app, so a tampered or substituted download is rejected.
 
-Release notes for the version you are running are in the app under **Settings →
-Updates → What's new in this version**. Every release is listed at
+Every release is listed at
 [docs.docgraph.app/changelog](https://docs.docgraph.app/changelog).
 
 ## Use DocGraph from Claude Code
@@ -94,7 +73,7 @@ whiteboard, or reads and writes your notes:
 /docgraph create an ERD for the database in ~/work/shop
 ```
 
-1. In DocGraph: **Settings → AI → MCP**, enable the server and copy the token.
+1. In DocGraph: **Settings → Connections → Agents & MCP**, enable the server and copy the token.
 2. `export DOCGRAPH_MCP_TOKEN="<token>"` in your shell profile.
 3. In Claude Code: `/plugin marketplace add docgraph-app/docgraph`, then
    `/plugin install docgraph@docgraph`, and restart Claude Code.
@@ -119,14 +98,12 @@ load plugins from them yet.
 - **Intel Macs (x86_64) are not built.** The embedding runtime DocGraph uses
   (ONNX Runtime via `ort`) publishes no prebuilt binary for that target, so the
   build cannot be produced without compiling it from source.
-- **OS code-signing is not yet provisioned**, so first launch needs the
-  one-time confirmation described under [Install](#install).
 
 ## Report a bug or request a feature
 
 The source lives elsewhere, but bugs and ideas are tracked here in the open.
 
-- **Bug:** in DocGraph, choose **Help → Report a Problem…** (or **Settings → Updates →
+- **Bug:** in DocGraph, choose **Help → Report a Problem…** (or **Settings → General → Updates →
   Report a problem…**). It opens a
   [bug report](https://github.com/docgraph-app/docgraph/issues/new?template=bug_report.yml)
   with your version and system already filled in. Nothing is sent until you
