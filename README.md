@@ -46,8 +46,8 @@ any other Mac app. Intel Macs, Windows and Linux are planned for later releases.
 Check whenever you like: **Settings → General → Updates → Check for updates**.
 
 DocGraph also checks on its own about once a day (a few minutes after launch,
-then roughly every 24 hours). You can turn that off in **Settings → General →
-Updates**.
+then roughly every 24 hours). This check is always on, so security fixes reach
+everyone; **Skip this version** hides an update you don't want.
 
 A check fetches one small file from this repository and **sends nothing about
 you**: not your version, not your platform, not any identifier. There is no
